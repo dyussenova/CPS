@@ -1,0 +1,22 @@
+//base
+@import './base/reset.scss';
+@import './base/vars.scss';
+@import './base/mixsins';
+@import './base/fonts';
+@import '../../node_modules/swiper/swiper-bundle.min.css';
+@import '~normalize.css';
+
+//blocks
+@import './blocks/header';
+@import './blocks/sidebar';
+@import './blocks/modalcall';
+@import './blocks/modalfeedback';
+@import './blocks/content';
+@import './blocks/brands';
+@import './blocks/technique';
+@import './blocks/price';
+
+body {
+  font-family: 'TT Lakes', sans-serif;
+  background-color: $white;
+}

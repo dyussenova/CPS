@@ -1,0 +1,21 @@
+.modal__feedback {
+  position: fixed;
+  min-width: 320px;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  transition: 1s;
+  right: -768px;
+  visibility: hidden;
+  transition: 1s;
+
+  @include mediaTablet {
+    width: 445px;
+    border-left: 1px solid $blue;
+  }
+}
+
+.modal__input--message {
+  height: 118px;
+  padding-bottom: 70px;
+}

@@ -1,0 +1,149 @@
+.sidebar {
+  height: 100%;
+  width: 100%;
+  min-width: 320px;
+  position: fixed;
+  left: -768px;
+  z-index: 3;
+  opacity: 1;
+  top: 0;
+  box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2);
+  background-color: white;
+  transition: 1s;
+
+  @include mediaTablet {
+    width: 320px;
+  }
+
+  &__header {
+    width: 100%;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+    text-align: left;
+    margin-bottom: 32px;
+    margin-left: 20px;
+    transition-duration: 1s;
+    color: $dark;
+  }
+
+  &__item:last-child {
+    margin-bottom: 0px;
+  }
+  &__item:first-child {
+    margin-top: 22px;
+  }
+
+  &__footer {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__footer--size {
+    margin-top: 32px;
+    margin-bottom: 8px;
+    margin-left: 20px;
+  }
+  @include mediaTablet {
+    &__footer--size {
+      margin-top: 280px;
+    }
+  }
+
+  &__contact-one {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__contact-one--size {
+    margin-bottom: 16px;
+  }
+
+  &__contact-two {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__email {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    font-weight: 500;
+    color: $dark;
+    font-weight: medium;
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+
+  &__phone {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.6px;
+    font-weight: bold;
+    text-decoration: none;
+    color: $dark;
+    margin-bottom: 40px;
+  }
+
+  &__languages {
+    display: flex;
+  }
+
+  &__item-lang {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+    color: $dark;
+    margin-right: 7px;
+  }
+
+  @include mediaLaptop {
+    box-shadow: none;
+    left: 0 !important;
+    visibility: visible !important;
+  }
+}
+
+.sidebar__item--active {
+  position: relative;
+  color: $grey;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: -5px;
+    width: 4px;
+    height: 32px;
+    background: url(/img/highlight.png);
+  }
+}
+.item-page__icon-close {
+  background: url(/img/close.svg) no-repeat center;
+}
+
+.item-page__icon-search {
+  background: url(/img/search.svg) no-repeat center;
+}
+
+.sidebar__item-lang--active {
+  color: $grey;
+}
+
+@include mediaLaptop {
+  .close {
+    display: none;
+  }
+}

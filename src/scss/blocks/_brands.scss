@@ -1,0 +1,130 @@
+.section__container {
+  background: $gradient;
+  @include mediaLaptop {
+    margin-left: 320px;
+  }
+}
+
+.section__header {
+  height: 80px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+  color: $grey;
+  background: linear-gradient(90deg, $gradient 0%, $white 98%);
+  border-top: 1px solid $light-blue;
+
+  &--title {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+}
+.brands {
+  display: flex;
+
+  &__wrapper {
+    width: auto;
+    margin-bottom: 16px;
+    margin-left: 16px;
+
+    @include mediaTablet {
+      flex-wrap: wrap;
+      margin-left: 24px;
+    }
+  }
+
+  &--hidden {
+    @include mediaTablet {
+      height: 170px;
+      overflow: hidden;
+    }
+  }
+}
+
+.card {
+  width: 240px;
+  height: 72px;
+  background: $white;
+  border: 1px solid $light-grey;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  margin-right: 16px;
+
+  @include mediaTablet {
+    width: 224px;
+  }
+
+  @include mediaLaptop {
+    width: 240px;
+    margin-right: 32px;
+  }
+
+  &__img {
+    margin-left: 16px;
+  }
+
+  &__link {
+    width: 40px;
+    height: 40px;
+
+    margin-right: 16px;
+  }
+
+  &__btn {
+    width: 40px;
+    height: 40px;
+    background-color: $white;
+    background-image: url(/img/go.png);
+  }
+}
+
+.btn {
+  margin-left: 48px;
+  font-family: 'TT Lakes', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  padding-bottom: 32px;
+  position: relative;
+  cursor: pointer;
+  display: none;
+
+  @include mediaTablet {
+    display: block;
+
+    &::before {
+      content: '';
+      background: url(/img/expand.png) no-repeat center;
+      transform: rotate(-180deg);
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      left: -26px;
+    }
+  }
+}
+
+.btn.btn__show::before {
+  content: '';
+  background: url(/img/expand.png) no-repeat center;
+  transform: rotate(0deg);
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: -26px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $bullet;
+}
+
+.swiper-pagination {
+  @include mediaTablet {
+    display: none;
+  }
+}

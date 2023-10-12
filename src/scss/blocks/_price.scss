@@ -1,0 +1,199 @@
+.price {
+  margin-left: 24px;
+
+  padding-bottom: 34px;
+  @include mediaTablet {
+    padding-bottom: 24px;
+    margin-right: 24px;
+  }
+
+  &__wrapper {
+    width: 260px;
+    @include mediaTablet {
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      background: $white;
+      border-radius: 6px;
+      padding: 0 16px;
+      box-sizing: inherit;
+    }
+  }
+}
+.table {
+  display: none;
+  @include mediaTablet {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    margin-bottom: 16px;
+    color: $grey;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  &__one {
+    flex-basis: 55%;
+  }
+
+  &__two {
+    flex-basis: 14%;
+  }
+
+  &__three {
+    flex-basis: 14%;
+  }
+  &__four {
+    width: 119px;
+  }
+}
+
+.card-inside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  border: 1px solid $light-grey;
+  @include mediaTablet {
+    border: none;
+  }
+
+  &--two {
+    background: $white;
+    border-radius: 6px;
+    width: 260px;
+    height: 200px;
+    padding: 16px;
+
+    @include mediaTablet {
+      flex-direction: row;
+      align-items: center;
+      width: auto;
+      height: auto;
+      padding: 16px 0;
+      justify-content: space-between;
+      border-bottom: 1px solid $light-grey;
+    }
+  }
+
+  &__top {
+    color: $grey;
+    @include mediaTablet {
+      display: none;
+    }
+  }
+
+  &__name {
+    flex-basis: 55%;
+  }
+
+  &__middle {
+    flex-basis: 55%;
+    @include mediaTablet {
+      flex-basis: 14%;
+    }
+  }
+}
+
+.card-link {
+  display: flex;
+  justify-content: flex-end;
+
+  &__btn {
+    width: 119px;
+    height: 32px;
+    color: $white;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 24px;
+    letter-spacing: -0.15px;
+    background-color: $pink;
+    border-radius: 20px;
+
+    @include mediaTablet {
+      padding-left: 8px;
+    }
+  }
+}
+
+.section__footer {
+  display: flex;
+  flex-direction: column;
+
+  &--text {
+    margin: 0 16px 16px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    @include mediaTablet {
+      width: 421px;
+      margin: 0 24px 16px;
+    }
+  }
+
+  &--link {
+    width: 250px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: $dark;
+    padding-left: 16px;
+    @include mediaTablet {
+      width: auto;
+      padding-left: 24px;
+    }
+  }
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid $light-blue;
+
+  @include mediaTablet {
+    padding-top: 32px;
+    padding-left: 24px;
+    padding-right: 24px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &--size {
+    margin-top: 40px;
+    padding-bottom: 19px;
+    padding-top: 16px;
+    font-size: 14px;
+    color: $grey;
+    line-height: 16px;
+  }
+
+  &__info {
+    text-align: center;
+    margin-bottom: 16px;
+    @include mediaTablet {
+      text-align: left;
+      width: 240px;
+    }
+  }
+
+  &__confi {
+    text-align: center;
+    margin-bottom: 16px;
+    @include mediaTablet {
+      width: 240px;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    margin-bottom: 16px;
+    @include mediaTablet {
+      text-align: right;
+      width: 240px;
+    }
+  }
+}

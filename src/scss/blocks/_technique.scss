@@ -1,0 +1,47 @@
+.technique {
+  display: flex;
+
+  &__wrapper {
+    width: auto;
+    margin-bottom: 16px;
+    margin-left: 16px;
+
+    @include mediaTablet {
+      flex-wrap: wrap;
+      margin-left: 24px;
+    }
+  }
+
+  &--hidden {
+    @include mediaTablet {
+      height: 170px;
+      overflow: hidden;
+    }
+  }
+}
+
+.card_technique {
+  height: 160px;
+  align-items: flex-end;
+  padding-bottom: 16px;
+}
+
+.card__text {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  align-self: flex-start;
+  margin: 16px 0 0 16px;
+}
+
+@include mediaTablet {
+  .btn.btn__tech::before {
+    content: '';
+    background: url(/img/expand.png) no-repeat center;
+    transform: rotate(0deg);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: -26px;
+  }
+}
