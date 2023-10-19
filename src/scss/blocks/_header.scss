@@ -1,13 +1,19 @@
+.wrapper {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 .sideover {
   transition: 0.5s;
   transition-delay: 0.5s;
 }
 
 .page {
+  display: block;
   overflow: hidden;
   height: 100%;
   position: relative;
-
   transition: 0.5s;
   transition-delay: 0.5s;
 }
@@ -66,19 +72,13 @@
     opacity: 0.1;
   }
 
-  &__icon-burger {
-    background: url(/img/burger.svg) no-repeat center;
-  }
-
   &__icon-chek {
-    background: url(/img/checkstatus.svg) no-repeat center;
     @include mediaLaptop {
       margin-top: 42px;
     }
   }
 
   &__icon-repair {
-    background: url(/img/repair.svg) no-repeat center;
     @include mediaLaptop {
       margin-top: 42px;
     }
@@ -93,17 +93,6 @@
     margin-left: 0;
   }
 
-  &__icon-call {
-    background: url(/img/call.svg) no-repeat center;
-  }
-
-  &__icon-chat {
-    background: url(/img/chat.svg) no-repeat center;
-  }
-
-  &__icon-profile {
-    background: url(/img/profile.svg) no-repeat center;
-  }
   @include mediaTablet {
     &__icon--hidden {
       display: block;
@@ -120,7 +109,7 @@
       width: 2px;
       background-color: $light-grey;
       top: 28px;
-      margin-left: -50px;
+      margin-left: -30px;
     }
   }
 }

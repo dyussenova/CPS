@@ -1,29 +1,23 @@
 const page = document.querySelector('.page')
 
-const modalController1 = ({ modal, btnOpen, btnClose }) => {
+const modalController1 = ({ modal, modal2, btnOpen, btnClose }) => {
   const iconOpen = document.querySelectorAll(btnOpen)
   const modalElem = document.querySelector(modal)
-  const modalbtn = document.querySelector(btnClose)
-
-  modalElem.style.cssText = `
-  left: 0;
-  visibility: visible;
-`
+  const side = document.querySelector(modal2)
 
   const closeModal = (event) => {
     const target = event.target
 
-    if (target === modalbtn) {
+    if (target === modalElem || target.closest(btnClose)) {
+      side.classList.remove('sidebar-open')
+      modalElem.classList.remove('sidebar-open')
       page.classList.remove('page-opacity')
-      modalElem.style.visibility = 'hidden'
-      modalElem.style.left = '-768px'
     }
   }
 
   const openModal = () => {
-    modalElem.style.visibility = 'visible'
-    modalElem.style.left = '0px'
-
+    side.classList.add('sidebar-open')
+    modalElem.classList.add('sidebar-open')
     page.classList.add('page-opacity')
   }
 
@@ -31,17 +25,18 @@ const modalController1 = ({ modal, btnOpen, btnClose }) => {
     btn.addEventListener('click', openModal)
   })
 
-  modalbtn.addEventListener('click', closeModal)
+  modalElem.addEventListener('click', closeModal)
 }
 
 modalController1({
-  modal: '.sidebar',
+  modal: '.overlay-sidebar',
+  modal2: '.sidebar',
   btnOpen: '.burger',
   btnClose: '.close'
 })
 
-let list = document.querySelector('.sidebar__list')
-let changeColor = {
+const list = document.querySelector('.sidebar__list')
+const changeColor = {
   handleEvent(event) {
     const target = event.target.closest('.sidebar__item')
     if (!target) return
@@ -51,8 +46,8 @@ let changeColor = {
 list.addEventListener('mouseenter', changeColor, true)
 list.addEventListener('mouseleave', changeColor, true)
 
-let langs = document.querySelector('.sidebar__languages')
-let changeLangs = {
+const langs = document.querySelector('.sidebar__languages')
+const changeLangs = {
   handleEvent(event) {
     const target = event.target.closest('.sidebar__item-lang')
     if (!target) return

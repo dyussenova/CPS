@@ -1,5 +1,5 @@
-let elem = document.querySelector('.elem')
-let show = document.querySelector('.show')
+const elem = document.querySelector('.elem')
+const show = document.querySelector('.show')
 
 show.addEventListener('click', function (event) {
   elem.classList.toggle('brands--hidden')

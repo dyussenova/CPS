@@ -1,11 +1,11 @@
 .page__content {
   background-color: $gradient;
 
-  &--size {
+  /* &--size {
     @include mediaLaptop {
       margin-left: 320px;
     }
-  }
+  }*/
 }
 
 .page__list {

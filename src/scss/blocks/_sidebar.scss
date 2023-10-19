@@ -1,7 +1,15 @@
+.overlay-sidebar {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  visibility: hidden;
+}
+
 .sidebar {
   height: 100%;
   width: 100%;
   min-width: 320px;
+  max-width: 360px;
   position: fixed;
   left: -768px;
   z-index: 3;
@@ -110,9 +118,10 @@
   }
 
   @include mediaLaptop {
+    position: absolute;
     box-shadow: none;
-    left: 0 !important;
-    visibility: visible !important;
+    visibility: visible;
+    left: 0;
   }
 }
 
@@ -130,13 +139,6 @@
     background: url(/img/highlight.png);
   }
 }
-.item-page__icon-close {
-  background: url(/img/close.svg) no-repeat center;
-}
-
-.item-page__icon-search {
-  background: url(/img/search.svg) no-repeat center;
-}
 
 .sidebar__item-lang--active {
   color: $grey;
@@ -146,4 +148,9 @@
   .close {
     display: none;
   }
+}
+
+.sidebar-open {
+  left: 0;
+  visibility: visible;
 }

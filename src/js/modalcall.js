@@ -1,28 +1,23 @@
 const side = document.querySelector('.sideover')
 
-const modalController = ({ modal, btnOpen, btnClose }) => {
+const modalController = ({ modal, modal2, btnOpen, btnClose }) => {
   const iconOpen = document.querySelectorAll(btnOpen)
   const modalElem = document.querySelector(modal)
-  const modalbtn = document.querySelector(btnClose)
+  const side1 = document.querySelector(modal2)
 
-  modalElem.style.cssText = `
-  right: 0;
-  visibility: visible;
-`
   const closeModal = (event) => {
-    const target = event.target
+    let target = event.target
 
-    if (target === modalbtn) {
+    if (target === modalElem || target.closest(btnClose)) {
+      side1.classList.remove('modal-open')
       side.classList.remove('page-opacity')
-      modalElem.style.visibility = 'hidden'
-      modalElem.style.right = '-768px'
+      modalElem.classList.remove('modal-open')
     }
   }
 
   const openModal = () => {
-    modalElem.style.visibility = 'visible'
-    modalElem.style.right = '0px'
-
+    modalElem.classList.add('modal-open')
+    side1.classList.add('modal-open')
     side.classList.add('page-opacity')
   }
 
@@ -30,17 +25,18 @@ const modalController = ({ modal, btnOpen, btnClose }) => {
     btn.addEventListener('click', openModal)
   })
 
-  modalbtn.addEventListener('click', closeModal)
+  modalElem.addEventListener('click', closeModal)
 }
-
 modalController({
-  modal: '.modal__call',
+  modal: '.overlay-modal',
+  modal2: '.modal__call',
   btnOpen: '.item-page__icon-call',
   btnClose: '.modal__btn'
 })
 
 modalController({
-  modal: '.modal__feedback',
+  modal: '.overlay-modal',
+  modal2: '.modal__feedback',
   btnOpen: '.item-page__icon-chat',
   btnClose: '.close__feed'
 })

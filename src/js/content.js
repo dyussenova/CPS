@@ -1,5 +1,5 @@
-let list = document.querySelector('.page__list')
-let changeLink = {
+const list = document.querySelector('.page__list')
+const changeLink = {
   handleEvent(event) {
     const target = event.target.closest('.page__item ')
     if (!target) return
@@ -9,8 +9,8 @@ let changeLink = {
 list.addEventListener('mouseenter', changeLink, true)
 list.addEventListener('mouseleave', changeLink, true)
 
-let text = document.querySelector('.page__text')
-let read = document.querySelector('.page__btn--read')
+const text = document.querySelector('.page__text')
+const read = document.querySelector('.page__btn--read')
 
 read.addEventListener('click', function (event) {
   text.classList.toggle('page__text--hidden')

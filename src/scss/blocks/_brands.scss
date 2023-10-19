@@ -1,10 +1,6 @@
 .section__container {
   background: $gradient;
-  @include mediaLaptop {
-    margin-left: 320px;
-  }
 }
-
 .section__header {
   height: 80px;
   font-size: 16px;
@@ -73,13 +69,6 @@
 
     margin-right: 16px;
   }
-
-  &__btn {
-    width: 40px;
-    height: 40px;
-    background-color: $white;
-    background-image: url(/img/go.png);
-  }
 }
 
 .btn {
@@ -126,5 +115,11 @@
 .swiper-pagination {
   @include mediaTablet {
     display: none;
+  }
+}
+
+.main-container {
+  @include mediaLaptop {
+    margin-left: 320px;
   }
 }

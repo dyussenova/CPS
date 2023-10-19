@@ -1,5 +1,5 @@
-let technique = document.querySelector('.elem-technique')
-let show2 = document.querySelector('.show2')
+const technique = document.querySelector('.elem-technique')
+const show2 = document.querySelector('.show2')
 
 show2.addEventListener('click', function (event) {
   technique.classList.toggle('technique--hidden')
